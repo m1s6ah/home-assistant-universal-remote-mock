@@ -1,0 +1,29 @@
+type: vertical-stack
+cards:
+  - type: heading
+    heading: Universal Remote Control
+  - type: grid
+    square: false
+    columns: 2
+    cards:
+      - type: button
+        name: TV Power
+        entity: input_boolean.tv_power_state
+        icon: mdi:television
+        show_state: true
+        tap_action:
+          action: toggle
+      - type: button
+        name: AVR Power
+        entity: input_boolean.avr_power_state
+        icon: mdi:audio-video
+        show_state: true
+        tap_action:
+          action: toggle
+  - type: entities
+    title: Source Selection & Volume
+    entities:
+      - entity: input_select.active_source
+        name: Active Source Input
+      - entity: input_number.media_volume
+        name: System Volume
